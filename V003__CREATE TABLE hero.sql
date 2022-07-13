@@ -1,5 +1,5 @@
 CREATE TABLE hero(
-    id BIGSERIAL NOT NULL,
+    id  INT NOT NULL,
     name VARCHAR(250) NOT NULL,
     description TEXT NOT NULL,
     debut_year INT NOT NULL,
