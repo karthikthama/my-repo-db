@@ -4,7 +4,7 @@ id INT,
 name VARCHAR(50) NOT NULL,
 category VARCHAR(50) NOT NULL,
 price INT NOT NULL
-)
+);
 
 
 INSERT INTO Books
@@ -18,7 +18,7 @@ VALUES
 (7, 'Book7', 'Cat7', 8000),
 (8, 'Book8', 'Cat8', 5000),
 (9, 'Book9', 'Cat9', 5400),
-(10, 'Book10', 'Cat10', 3200)
+(10, 'Book10', 'Cat10', 3200);
 
 BEGIN TRANSACTION
  
