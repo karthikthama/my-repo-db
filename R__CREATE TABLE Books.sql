@@ -26,7 +26,7 @@ BEGIN TRANSACTION
   VALUES (20, 'Book15', 'Cat5', 2000)
  
   UPDATE Books
-  SET price = '25 Hundred' WHERE id = 20
+  SET price = '2500' WHERE id = 20
  
   DELETE from Books
   WHERE id = 20
