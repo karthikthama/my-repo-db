@@ -6,10 +6,8 @@ category VARCHAR(50) NOT NULL,
 price INT NOT NULL
 )
 
-USE BookStore
- 
+
 INSERT INTO Books
- 
 VALUES
 (1, 'Book1', 'Cat1', 1800),
 (2, 'Book2', 'Cat2', 1500),
