@@ -1,6 +1,3 @@
-CREATE Database BookStore;
-GO
-USE BookStore;
 CREATE TABLE Books
 (
 id INT,
