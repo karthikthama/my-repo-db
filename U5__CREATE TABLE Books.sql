@@ -1,0 +1,2 @@
+DROP TABLE Books;
+DROP TABLE Persons;
