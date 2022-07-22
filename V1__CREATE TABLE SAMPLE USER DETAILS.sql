@@ -10,7 +10,7 @@ CREATE TABLE  user_details(
 );
 
 
-INSERT INTO user_details (user_id, username, first_name, last_name, gender, password, status) VALUES
+INSERT INTO user_details(user_id, username, first_name, last_name, gender, password, status) VALUES
 (1, 'rogers63', 'david', 'john', 'Female', 'e6a33eee180b07e563d74fee8c2c66b8', 1),
 (2, 'mike28', 'rogers', 'paul', 'Male', '2e7dc6b8a1598f4f75c3eaa47958ee2f', 1),
 (3, 'rivera92', 'david', 'john', 'Male', '1c3a8e03f448d211904161a6f5849b68', 1),
