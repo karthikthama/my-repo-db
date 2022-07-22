@@ -5,8 +5,7 @@ CREATE TABLE  public.user_details (
   last_name varchar(50) DEFAULT NULL,
   gender varchar(10) DEFAULT NULL,
   password varchar(50) DEFAULT NULL,
-  status tinyint(10) DEFAULT NULL,
-  PRIMARY KEY (user_id)
+  status tinyint(10) DEFAULT NULL
 );
 
 
