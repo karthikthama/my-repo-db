@@ -1,4 +1,4 @@
-CREATE TABLE  public.user_details(
+CREATE TABLE  public.user_details (
   user_id int(11) NOT NULL,
   user_name varchar(255) DEFAULT NULL,
   first_name varchar(50) DEFAULT NULL,
