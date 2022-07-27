@@ -6,6 +6,6 @@ CREATE TABLE Players (
     City varchar(255)
 );
 
-INSERT INTO Persons (PersonID, LastName, FirstName, Address, City) VALUES
+INSERT INTO Players (PersonID, LastName, FirstName, Address, City) VALUES
 (123, 'sam', 'billings', 'Australia', 'Melbourne'),
 (018, 'virat', 'kohli', 'Banglore', 'whitefield');
