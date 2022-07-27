@@ -1,4 +1,4 @@
-CREATE TABLE backup.Books_ag
+CREATE TABLE backup.Books
 (
 id INT,
 name VARCHAR(50) NOT NULL,
