@@ -23,20 +23,14 @@ pipeline {
             steps {
                 script {
                      sh '''
-                     cd /var/lib/jenkins/workspace/flyway-updated
-                     sudo mkdir /home/ubuntu/backup
-                     sudo cp -r /var/lib/jenkins/workspace/flyway-updated/my-repo-db  /home/ubuntu/backup
-                     cp -r /var/lib/jenkins/workspace/flyway-updated/my-repo-db/*.sql /jenkins/sql '''
+                     cd $WORKSPACE/my-repo-db
+                     zip -r $BRANCH.zip $BRANCH
+                     mv $WORKSPACE/my-repo-db/$BRANCH.zip /jenkins/backup
+                     cp -r $WORKSPACE/my-repo-db/$BRANCH/*.sql /jenkins/sql 
+                     cp -r $WORKSPACE/my-repo-db/$BRANCH/*.sql /jenkins/version
+                     cp -r /jenkins/version/* /jenkins/sql 
+                     '''
                 }               
-            }
-        }
-        stage ('verfiy version') {
-            steps {
-                script {
-                    sh '''
-                    docker pull flyway/flyway:9.2.0
-                    docker run --rm flyway/flyway:9.2.0 '''
-                }
             }
         }
         stage ('migrate') {
@@ -49,21 +43,24 @@ pipeline {
         stage ('validate') {
             steps {
                 script {
-                    sh 'docker run --rm -v /jenkins/sql:/flyway/sql -v /jenkins/conf:/flyway/conf flyway/flyway -user=$DB_CREDS_USR -password=$DB_CREDS_PSW migrate'
+                    sh 'docker run --rm -v /jenkins/sql:/flyway/sql -v /jenkins/conf:/flyway/conf flyway/flyway -user=$DB_CREDS_USR -password=$DB_CREDS_PSW validate'
                 }
             }
         }
         stage ('info') {
             steps {
                 script {
-                    sh 'docker run --rm -v /jenkins/sql:/flyway/sql -v /jenkins/conf:/flyway/conf flyway/flyway -user=$DB_CREDS_USR -password=$DB_CREDS_PSW migrate'
+                    sh 'docker run --rm -v /jenkins/sql:/flyway/sql -v /jenkins/conf:/flyway/conf flyway/flyway -user=$DB_CREDS_USR -password=$DB_CREDS_PSW info'
                 }     
             }
         }
         stage ('upload to master') {
             steps {
                 script {
-                    sh 'git merge $BRANCH'
+                    sh ''' 
+                    cd /jenkins/version
+                    git clone https://github.com/karthikthama/my-repo-db.git
+                    resync -av --exclude 'my-repo-db' /jenkins/version/*.sql 
                 }     
             }
         }
