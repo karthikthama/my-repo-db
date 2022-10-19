@@ -59,7 +59,8 @@ pipeline {
                 script {
                     sh ''' 
                     cd /jenkins/version
-                    rsync -avP /jenkins/version/*.sql '''
+                    git clone https://github.com/karthikthama/my-repo-db.git
+                    rsync -avP --exclude 'my-repo-db' /jenkins/version/*.sql '''
                 }     
             }
         }
