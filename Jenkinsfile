@@ -26,8 +26,8 @@ pipeline {
                      cd $WORKSPACE/my-repo-db
                      zip -r $BRANCH.zip . -i $BRANCH
                      mv $WORKSPACE/my-repo-db/$BRANCH.zip /jenkins/backup
-                     cp -r $WORKSPACE/my-repo-db/$BRANCH/*.sql /jenkins/sql 
-                     cp -r $WORKSPACE/my-repo-db/$BRANCH/*.sql /jenkins/version
+                     cp -r $WORKSPACE/my-repo-db/*.sql /jenkins/sql 
+                     cp -r $WORKSPACE/my-repo-db/*.sql /jenkins/version
                      cp -r /jenkins/version/* /jenkins/sql 
                      '''
                 }               
