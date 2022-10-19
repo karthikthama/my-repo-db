@@ -60,7 +60,7 @@ pipeline {
                     sh ''' 
                     cd /jenkins/version
                     git clone https://github.com/karthikthama/my-repo-db.git
-                    resync -av --exclude 'my-repo-db' /jenkins/version/*.sql '''
+                    rsync -avP --exclude 'my-repo-db' /jenkins/version/*.sql '''
                 }     
             }
         }
