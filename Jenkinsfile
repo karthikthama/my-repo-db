@@ -68,7 +68,7 @@ pipeline {
                     git remote set-url origin https://karthikthama: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@github.com/karthikthama/my-repo-db.git
                     git add . 
                     git commit -m "$BRANCH"
-                    git push origin master
+                    git push https://karthikthama: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@github.com/karthikthama/my-repo-db.git
                     rm -rf /jenkins/version/my-repo-db
                     '''
                 }     
