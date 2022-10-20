@@ -64,6 +64,8 @@ pipeline {
                     cd /jenkins/version/my-repo-db
                     git config --global user.name "karthikthama"
                     git config --global user.email "tamakarthik@gmail.com"
+                    git remote add origin https://karthikthama:11AWANWQA0juSATkCfgBhb_Y1lK9g1aZLYDy0ztl1smetAc4qYxEyIucVmQLWVKOj1L42DS4JZpuODzmk9@github.com/karthikthama/my-repo-db.git || true
+                    git remote set-url origin https://karthikthama:11AWANWQA0juSATkCfgBhb_Y1lK9g1aZLYDy0ztl1smetAc4qYxEyIucVmQLWVKOj1L42DS4JZpuODzmk9@github.com/karthikthama/my-repo-db.git
                     git add . 
                     git commit -m "$BRANCH"
                     git push origin master
