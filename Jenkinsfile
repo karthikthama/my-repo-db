@@ -59,6 +59,7 @@ pipeline {
                 script {
                     sh ''' 
                     cd /jenkins/version
+                    git remote add origin https://github.com/karthikthama/my-repo-db.git
                     git clone https://github.com/karthikthama/my-repo-db.git
                     rsync -r --exclude 'my-repo-db' /jenkins/version/*.sql /jenkins/version/my-repo-db
                     cd /jenkins/version/my-repo-db
