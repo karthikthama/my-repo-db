@@ -59,7 +59,7 @@ pipeline {
                 script {
                     sh ''' 
                     cd /jenkins/version
-                    git set url https://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:karthikthama@github.com/karthikthama/my-repo-db.git
+                    git remote set-url origin https://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:karthikthama@github.com/karthikthama/my-repo-db.git
                     git clone https://github.com/karthikthama/my-repo-db.git
                     rsync -r --exclude 'my-repo-db' /jenkins/version/*.sql /jenkins/version/my-repo-db
                     cd /jenkins/version/my-repo-db
