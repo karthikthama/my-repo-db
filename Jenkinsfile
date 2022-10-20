@@ -68,7 +68,7 @@ pipeline {
                     git config --global user.email "tamakarthik@gmail.com"
                     git add . 
                     git commit -m "$BRANCH"
-                    git push
+                    git push origin master
                     rm -rf /jenkins/version/my-repo-db
                     '''
                 }     
