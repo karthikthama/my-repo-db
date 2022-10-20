@@ -63,6 +63,8 @@ pipeline {
                     git clone https://github.com/karthikthama/my-repo-db.git
                     rsync -r --exclude 'my-repo-db' /jenkins/version/*.sql /jenkins/version/my-repo-db
                     cd /jenkins/version/my-repo-db
+                    git config --global user.name "karthikthama"
+                    git config --global user.email "tamakarthik@gmail.com"
                     git add . 
                     git commit -m "$BRANCH"
                     git push -u origin master
