@@ -62,8 +62,8 @@ pipeline {
                     git clone https://github.com/karthikthama/my-repo-db.git
                     rsync -r --exclude 'my-repo-db' /jenkins/version/*.sql /jenkins/version/my-repo-db
                     cd /jenkins/version/my-repo-db
-                    git remote add origin https://github.com/karthikthama/my-repo-db.git || true
-                    git remote set-url origin https://github.com/karthikthama/my-repo-db.git
+                    git remote add origin https://{11AWANWQA0juSATkCfgBhb_Y1lK9g1aZLYDy0ztl1smetAc4qYxEyIucVmQLWVKOj1L42DS4JZpuODzmk9}github.com/karthikthama/my-repo-db.git || true
+                    git remote set-url origin https://{11AWANWQA0juSATkCfgBhb_Y1lK9g1aZLYDy0ztl1smetAc4qYxEyIucVmQLWVKOj1L42DS4JZpuODzmk9}github.com/karthikthama/my-repo-db.git
                     git config --global user.name "karthikthama"
                     git config --global user.email "tamakarthik@gmail.com"
                     git add . 
